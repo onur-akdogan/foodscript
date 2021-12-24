@@ -20,7 +20,6 @@ Route::get('/', function () {
 
 Route::get('admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
 //Cache Clean
     Route::get('/clear-cache', function () {

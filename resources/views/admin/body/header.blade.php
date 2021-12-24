@@ -21,13 +21,13 @@
 
         <div class="nav-control">
             <div class="hamburger">
-                <span class="toggle-icon"><i class="icon-menu"></i></span>
+                <span class="toggle-icon"><i class="fa fa-bars" >Menü</i></span>
             </div>
         </div>
-        <div class="header-left">
+        <div class="header-left text-center ">
             <a href="{{route('cacheClean')}}" >
                 <i class=""></i>
-                <span class="badge badge-pill gradient-1 mt-3 text-center" style="height: 30px">Önbellek Temizle</span>
+                <span class="badge badge-pill gradient-2 pt-2 pb-2 mt-4 text-center" >Önbellek Temizle</span>
             </a>
         </div>
         <div class="header-right">

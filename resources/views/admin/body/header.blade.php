@@ -1,9 +1,9 @@
 <div class="nav-header">
     <div class="brand-logo">
-        <a href="index.html">
+        <a href="{{route('admin.index')}}">
             <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
             <span class="logo-compact"></span>
-            <span class="brand-title ">
+            <span class="brand-title">
                         <h2 class="text-white">YO Script</h2>
                     </span>
         </a>

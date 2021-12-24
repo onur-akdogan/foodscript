@@ -3,8 +3,8 @@
         <a href="index.html">
             <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
             <span class="logo-compact"></span>
-            <span class="brand-title text-success">
-                        YO Script
+            <span class="brand-title ">
+                        <h2 class="text-white">YO Script</h2>
                     </span>
         </a>
     </div>

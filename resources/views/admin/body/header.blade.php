@@ -2,9 +2,9 @@
     <div class="brand-logo">
         <a href="index.html">
             <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-            <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
-            <span class="brand-title">
-                        <img src="images/logo-text.png" alt="">
+            <span class="logo-compact"></span>
+            <span class="brand-title text-success">
+                        YO Script
                     </span>
         </a>
     </div>
@@ -27,7 +27,8 @@
         <div class="header-left">
             <div class="input-group icons">
                 <div class="input-group-prepend">
-                    <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                    <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i
+                            class="mdi mdi-magnify"></i></span>
                 </div>
                 <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
                 <div class="drop-down animated flipInX d-md-none">
@@ -152,8 +153,8 @@
                     </div>
                 </li>
                 <li class="icons dropdown d-none d-md-flex">
-                    <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
-                        <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                    <a href="javascript:void(0)" class="log-user" data-toggle="dropdown">
+                        <span>English</span> <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
                     </a>
                     <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
                         <div class="dropdown-content-body">
@@ -165,7 +166,7 @@
                     </div>
                 </li>
                 <li class="icons dropdown">
-                    <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                    <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                         <span class="activity active"></span>
                         <img src="images/user/1.png" height="40" width="40" alt="">
                     </div>
@@ -177,7 +178,8 @@
                                 </li>
                                 <li>
                                     <a href="javascript:void()">
-                                        <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
+                                        <i class="icon-envelope-open"></i> <span>Inbox</span>
+                                        <div class="badge gradient-3 badge-pill gradient-1">3</div>
                                     </a>
                                 </li>
 

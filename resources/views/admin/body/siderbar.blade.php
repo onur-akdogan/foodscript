@@ -14,8 +14,8 @@
                     <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Kategoriler</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./layout-blank.html">Kategoriler</a></li>
-                    <li><a href="./layout-one-column.html">Kategori ekle</a></li>
+                    <li><a href="{{route('category.index')}}">Kategoriler</a></li>
+                    <li><a href="{{route('category.addPage')}}">Kategori ekle</a></li>
                    
                 </ul>
             </li>

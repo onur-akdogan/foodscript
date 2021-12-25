@@ -21,7 +21,8 @@
 
         <div class="nav-control">
             <div class="hamburger">
-                <span class="toggle-icon"><i class="fa fa-bars" >Menü</i></span>
+                <span class="toggle-icon"><i class="fa fa-bars" aria-hidden="true"></i>
+                </span>
             </div>
         </div>
         <div class="header-left text-center ">

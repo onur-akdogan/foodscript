@@ -2,11 +2,14 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\PostController;
-use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\FixedPageController;
 
+use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\WebsiteSettingController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\UserController;
-
+use \App\Http\Controllers\Backend\AdController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Contracts\LoginViewResponse;
@@ -71,7 +74,35 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::post('/post/insert',[PostController::class,'insert'])->name('post.insert');
     Route::get('/post/delete/{id}',[PostController::class,'delete'])->name('post.delete');
 
+   //Sabit sayfa işlemler
+   
+Route::get('/fixedpage', [FixedPageController::class, 'index'])->name('fixedpage.index');
+Route::get('/fixedpage/add', [FixedPageController::class, 'add'])->name('fixedpage.add');
+Route::post('/fixedpage/post', [FixedPageController::class, 'store'])->name('fixedpage.postStore');
+Route::post('/fixedpage/status/{id}', [FixedPageController::class, 'status'])->name('fixedpage.status');
+Route::get('/fixedpage/delete/{id}', [FixedPageController::class, 'delete'])->name('fixedpage.delete');
+Route::post('/fixedpage/edit/{id}', [FixedPageController::class, 'edit'])->name('fixedpage.edit');
+Route::get('/fixedpage/editPage/{id}', [FixedPageController::class, 'editPage'])->name('fixedpage.editPage');
 
+//Social Settings
+Route::get('/social/settings', [SettingController::class, 'SocialSetting'])->name('social.setting');
+Route::post('/social/update/{id}', [SettingController::class, 'UpdateSocial'])->name('social.update');
+Route::get('/seo/setting/', [SettingController::class, 'SeoSetting'])->name('seo.setting');
+Route::post('/seo/update/{seos}', [SettingController::class, 'UpdateSeo'])->name('seos.update');
+
+    //ADS BACKEND
+    Route::get('/list/ad', [AdController::class, 'ListAds'])->name('list.add');
+    Route::get('/add/ads', [AdController::class, 'AddAds'])->name('add.ads');
+    Route::post('/create/ads', [AdController::class, 'CreateAds'])->name('create.ads');
+    Route::get('/edit/ad/{ads}', [AdController::class, 'EditAds'])->name('edit.ads');
+    Route::post('/update/ad/{ad}', [AdController::class, 'UpdateAds'])->name('update.ads');
+    Route::post('/update/ads/{ad}', [AdController::class, 'adsStatus'])->name('update.adsStatus');
+    Route::get('/ad/delete/{ad}', [AdController::class, 'DeleteAds'])->name('delete.ads');
+
+
+//Website Setting Settings
+Route::get('/webiste/settings', [WebsiteSettingController::class, 'index'])->name('website.setting');
+Route::post('/webiste/update/{websetting}', [WebsiteSettingController::class, 'Update'])->name('websetting.update');
 
 });
 //Comments

@@ -1,6 +1,6 @@
 @extends('admin.admin_master')
 @section('admin')
-<div class="content">
+<div class="content m-2" >
 
 <div class="card">
 
@@ -15,7 +15,7 @@
         </select>-->
 
         <div class="form-group row">
-            <label class="col-form-label col-lg-2">Kategori İsmi)</label>
+            <label class="col-form-label col-lg-2">Kategori İsmi  </label>
             <div class="col-lg-10">
                 <input type="text"  name="title" class="form-control">
                 @error('category_tr')

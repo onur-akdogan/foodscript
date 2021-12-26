@@ -1,6 +1,6 @@
 @extends('admin.admin_master')
 @section('admin')
-<div class="content">
+<div class="content m-2" >
 
 <div class="card">
 

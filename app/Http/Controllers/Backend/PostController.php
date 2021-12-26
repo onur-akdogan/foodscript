@@ -19,15 +19,17 @@ class PostController extends Controller
         return view('backend.post.index',compact('allPost'));
     }
     public function editPage($id){
-        $post=Post::find($id);
-      return view('backend.post.edit',compact('post'));
+        $item=Post::find($id);$category=Category::get();
+      return view('backend.post.edit',compact('item','category'));
     }
-    public function update(Request $request){
-        $id=$request->id;
-        $data = request()->except(['_token','id']);
-        Post::where('id',$id)->update($data);
+    public function update(Request $request,Post $post)    {
+
+            dd($request->all());
+
         return Redirect()->route('post.index');
     }
+
+
 
     public function status($id,Request $request){
         $data = Post::where('id', $id)->first();

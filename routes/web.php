@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     //Post işlemleri
     Route::get('/post/index',[PostController::class,'index'])->name('post.index');
     Route::get('/post/editPage/{id}',[PostController::class,'editPage'])->name('post.editPage');
-    Route::Post('/post/update',[PostController::class,'update'])->name('post.update');
+    Route::Post('/post/update/{post}',[PostController::class,'update'])->name('post.update');
     Route::Post('/post/status/{id}',[PostController::class,'status'])->name('post.status');
     Route::get('/post/addPage',[PostController::class,'addPage'])->name('post.addPage');
     Route::post('/post/insert',[PostController::class,'insert'])->name('post.insert');

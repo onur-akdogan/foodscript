@@ -31,4 +31,8 @@ class Post extends Model
         'onerilenler',
         'onecikart',
     ];
+    public function tag()
+    {
+        return $this->belongsToMany(Tag::class, 'tags');
+    }
 }

@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="user_id" value="1">
+                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                             <div class="form-group">
                                 <label class="font-weight-semibold text-success">Kalori</label>
                                 <div class="form-group-feedback form-group-feedback-right">

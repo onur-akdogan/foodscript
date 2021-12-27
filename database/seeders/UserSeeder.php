@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => \Hash::make('admin'),
-            'image' => 'resim eklenmedi',
+
         ]);
     }
 }

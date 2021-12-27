@@ -3,6 +3,10 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\PostController;
 use App\Http\Controllers\backend\CategoryController;
+
+use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Contracts\LoginViewResponse;
@@ -48,6 +52,15 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::post('/category/insert',[CategoryController::class,'insert'])->name('category.insert');
     Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
 
+    //Kullanıcı işlemleri
+
+    Route::get('/user/list', [UserController::class, 'index'])->name("user.index");
+    Route::get('/user/editPage/{id}', [UserController::class, 'editPage'])->name("user.editPage");
+    Route::post('/user/edit/{id}', [UserController::class, 'edit'])->name("user.edit");
+    Route::get('/user/create', [UserController::class, 'create'])->name("user.create");
+    Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name("user.delete");
+    Route::post('/user/insert', [UserController::class, 'insert'])->name("user.insert");
+
 
     //Post işlemleri
     Route::get('/post/index',[PostController::class,'index'])->name('post.index');
@@ -59,4 +72,11 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/post/delete/{id}',[PostController::class,'delete'])->name('post.delete');
 
 
+
 });
+//Comments
+Route::post('/comments/post/{postid}', [CommentsController::class, 'AddComments'])->name('add.comments');
+Route::get('/comments/openPost/{postid}', [CommentsController::class, 'OpenComments'])->name('open.comments');
+Route::get('/comments', [CommentsController::class, 'adminCommentsindex'])->name("comments.index");
+Route::post('/comments/active/{id}', [CommentsController::class, 'ActiveComments'])->name('active.comments');
+Route::get('/comments/delete/{id}', [CommentsController::class, 'DeleteComments'])->name('delete.comments');

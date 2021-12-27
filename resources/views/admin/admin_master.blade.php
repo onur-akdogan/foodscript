@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{asset('plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
     <!-- Custom Stylesheet -->
     <link href="{{asset('css/backend/style.css')}}" rel="stylesheet">
-    
+
 
     <link href="{{asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 
@@ -102,7 +102,7 @@
 <!-- Datamap -->
 <script src="{{asset('plugins/d3v3/index.js')}}"></script>
 <script src="{{asset('plugins/topojson/topojson.min.js')}}"></script>
-<script src="plugins/datamaps/datamaps.world.min.js')}}"></script>
+<script src="{{asset('plugins/datamaps/datamaps.world.min.js')}}"></script>
 <!-- Morrisjs -->
 <script src="{{asset('plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('plugins/morris/morris.min.js')}}"></script>
@@ -112,7 +112,6 @@
 <!-- ChartistJS -->
 <script src="{{asset('plugins/chartist/js/chartist.min.js')}}"></script>
 <script src="{{asset('plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
-
 
 
 <script src="{{asset('js/dashboard/dashboard-1.js')}}"></script>

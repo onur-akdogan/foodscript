@@ -5,7 +5,7 @@
             <li class="nav-label">Panel</li>
             <li>
                 <a class="has-arrow" href="{{route('admin.index')}}" aria-expanded="false">
-                    <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                    <i class="icon-speedometer menu-icon"></i><span class="nav-text">Ana Sayfa</span>
                 </a>
 
             </li>

@@ -26,23 +26,21 @@
             </div>
         </div>
         <div class="header-left text-center ">
-            <a href="{{route('cacheClean')}}" >
+            <a href="{{route('cacheClean')}}">
                 <i class=""></i>
-                <span class="badge badge-pill gradient-2 pt-2 pb-2 mt-4 text-center" >Önbellek Temizle</span>
+                <span class="badge badge-pill gradient-2 pt-2 pb-2 mt-4 text-center">Önbellek Temizle</span>
             </a>
         </div>
         <div class="header-right">
             <ul class="clearfix">
 
 
-
-
-
                 <li class="icons dropdown">
                     <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                         <span class="activity active"></span>
-                        <img src="images/user/1.png" height="40" width="40" alt="">
+                        <img src="{{Auth::user()->image}}" height="40" width="40" alt="">
                     </div>
+                    {{Auth::user()->name}}
                     <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                         <div class="dropdown-content-body">
                             <ul>
@@ -50,7 +48,8 @@
 
                                 <hr class="my-2">
 
-                                <li><a href="{{route('admin.logout')}}"><i class="icon-key"></i> <span>Güvenli Çıkış</span></a></li>
+                                <li><a href="{{route('admin.logout')}}"><i class="icon-key"></i>
+                                        <span>Güvenli Çıkış</span></a></li>
                             </ul>
                         </div>
                     </div>

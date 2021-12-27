@@ -38,7 +38,7 @@
                 <li class="icons dropdown">
                     <div class="user-img c-pointer position-relative" data-toggle="dropdown">
                         <span class="activity active"></span>
-                        <img src="{{Auth::user()->image}}" height="40" width="40" alt="">
+                        <img src="{{asset(Auth::user()->profile_photo_path)}}" height="40" width="40" alt="">
                     </div>
                     {{Auth::user()->name}}
                     <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">

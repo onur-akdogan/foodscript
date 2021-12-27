@@ -106,5 +106,5 @@
                 reader.readAsDataURL(e.target.files['0']);
             });
         });
-
+        </script>
 @endsection

@@ -23,9 +23,30 @@ class PostController extends Controller
       return view('backend.post.edit',compact('item','category'));
     }
     public function update(Request $request,Post $post)    {
+        $post->fill($request->all());
+        $yil = Carbon::now()->year;
+        $ay = Carbon::now()->month;
+        if (file_exists('storage/postimg/' . $yil) === false) {
+            mkdir('storage/postimg/' . $yil, 0777, true);
+        }
+        if (file_exists('storage/postimg/' . $yil . '/' . $ay) === false) {
+            mkdir('storage/postimg/' . $yil . '/' . $ay, 0777, true);
+        }
 
-            dd($request->all());
+        $image = $request->image;
+        if ($image) { // if image is updating
+            $image_one = uniqid() . '.' . $image->getClientOriginalName();
 
+            $new_image_name = 'storage/postimg/' . $yil . '/' . $ay . '/' . $image_one;
+            Image::make($image)->resize(800, 600)->fit(800, 600)->save($new_image_name,58,'jpeg');
+            $post->image = $new_image_name; // set new image to the object, replace tmp image with new right path
+
+            if (file_exists($request->old_image)) {
+                unlink($request->old_image);
+            }
+        }
+
+        $post->save();
         return Redirect()->route('post.index');
     }
 
@@ -35,14 +56,14 @@ class PostController extends Controller
         $data = Post::where('id', $id)->first();
         $update['status'] = $request->aktif;
         Post::where('id', $id)->update($update);
-        
+
         return Redirect()->route('post.index');
-        
+
     }
     public function addPage(){
         $category =Category::get();
 
-        return view('backend.post.add',compact('category'));  
+        return view('backend.post.add',compact('category'));
   }
     public function insert(Request $request){
 
@@ -68,7 +89,7 @@ class PostController extends Controller
 
             $post->image = $new_image_name;
         }
-       
+
         $post->save();
 
         return Redirect()->route('post.index');

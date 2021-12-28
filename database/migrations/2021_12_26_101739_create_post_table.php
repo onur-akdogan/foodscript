@@ -15,23 +15,23 @@ class CreatePostTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle');
-            $table->string('image');
-            $table->string('post_video');
-            $table->string('hazirlanma_suresi');
-            $table->string('kisi_sayisi');
-            $table->string('pisirme_süresi');
-            $table->string('malzemeler');
-            $table->string('yapilis');
-            $table->string('kalori');
+            $table->string('title')->nullable();
+            $table->string('subtitle')->nullable();
+            $table->string('image')->nullable();
+            $table->string('post_video')->nullable();
+            $table->string('hazirlanma_suresi')->nullable();
+            $table->string('kisi_sayisi')->nullable();
+            $table->string('pisirme_süresi')->nullable();
+            $table->string('malzemeler')->nullable();
+            $table->string('yapilis')->nullable();
+            $table->string('kalori')->nullable();
             $table->integer('status')->default(0);
             $table->integer('category_id');
-            $table->integer('zorluk');
-            $table->integer('user_id');
-            $table->string('description');
-            $table->string('keywords');
-            $table->string('tags');
+            $table->integer('zorluk')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->string('description')->nullable();
+            $table->string('keywords')->nullable();
+            $table->string('tags')->nullable();
             $table->integer('gunun_yemegi')->default(0);
             $table->integer('slider')->default(0);
             $table->integer('onerilenler')->default(0);

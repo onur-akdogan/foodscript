@@ -24,9 +24,7 @@
             <label class="col-form-label col-lg-2">Site Başlığı</label>
             <div class="col-lg-10">
                 <input type="text" name="meta_title" value="{{$seos->meta_title}}" class="form-control">
-                @error('meta_title')
-                <span class="text-danger">{{$message}}</span>
-                @enderror
+                
             </div>
         </div>
         <div class="form-group row">

@@ -7,6 +7,8 @@ use App\Http\Controllers\backend\FixedPageController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\WebsiteSettingController;
+use App\Http\Controllers\Backend\BlogController;
+
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\UserController;
 use \App\Http\Controllers\Backend\AdController;
@@ -74,6 +76,15 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::post('/post/insert',[PostController::class,'insert'])->name('post.insert');
     Route::get('/post/delete/{id}',[PostController::class,'delete'])->name('post.delete');
 
+    
+// Blog İslemleri
+Route::get('/blog/index',[BlogController::class,'index'])->name('blog.index');
+Route::get('/blog/editPage/{id}',[BlogController::class,'editPage'])->name('blog.editPage');
+Route::Post('/blog/update/{blog}',[BlogController::class,'update'])->name('blog.update');
+Route::Post('/blog/status/{id}',[BlogController::class,'status'])->name('blog.status');
+Route::get('/blog/addPage',[BlogController::class,'addPage'])->name('blog.addPage');
+Route::post('/blog/insert',[BlogController::class,'insert'])->name('blog.insert');
+Route::get('/blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
    //Sabit sayfa işlemler
    
 Route::get('/fixedpage', [FixedPageController::class, 'index'])->name('fixedpage.index');
@@ -103,6 +114,9 @@ Route::post('/seo/update/{seos}', [SettingController::class, 'UpdateSeo'])->name
 //Website Setting Settings
 Route::get('/webiste/settings', [WebsiteSettingController::class, 'index'])->name('website.setting');
 Route::post('/webiste/update/{websetting}', [WebsiteSettingController::class, 'Update'])->name('websetting.update');
+
+
+
 
 });
 //Comments

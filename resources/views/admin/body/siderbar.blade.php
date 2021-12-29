@@ -52,6 +52,11 @@
                 <li><a href="{{route('list.add')}}">Reklam Alanları</a></li>
                 <li><a href="{{route('add.ads')}}">Reklam Ekle</a></li>
             </ul>
+            <a href="#pageSubmenuBlog" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bloglar</a>
+            <ul class="collapse list-unstyled" id="pageSubmenuBlog">
+                <li><a href="{{route('blog.index')}}">Blog Yazıları</a></li>
+                <li><a href="{{route('blog.addPage')}}">Blog Ekle</a></li>
+            </ul>
             <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ayarlar</a>
             <ul class="collapse list-unstyled" id="pageSubmenu3">
                 <li><a href="{{route('social.setting')}}">Sosyal Medya Ayarları</a></li>
@@ -61,14 +66,9 @@
                 <li><a href="{{route('post.addPage')}}">Tema Ayarları</a></li>
             </ul>
             
-            Yapılacaklar
             
 
-            <a href="#pageSubmenuBlog" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bloglar</a>
-            <ul class="collapse list-unstyled" id="pageSubmenuBlog">
-                <li><a href="{{route('post.index')}}">Blog Yazıları</a></li>
-                <li><a href="{{route('post.addPage')}}">Blog Ekle</a></li>
-            </ul>
+            
 
          
            
